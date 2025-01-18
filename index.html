@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        #app {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 10px solid;
+        }
+
+        li:nth-child(1) {
+            background-color: #e8f5e9; /* Light green for highly effective */
+        }
+
+        li:nth-child(2) {
+            background-color: #f1f8e9; /* Light lime */
+        }
+
+        li:nth-child(3) {
+            background-color: #fffde7; /* Light yellow */
+        }
+
+        li:nth-child(4) {
+            background-color: #fff8e1; /* Light amber */
+        }
+
+        li:nth-child(5) {
+            background-color: #fbe9e7; /* Light orange */
+        }
+
+        li:nth-child(6) {
+            background-color: #ffebee; /* Light red */
+        }
+
+        li:nth-child(7) {
+            background-color: #f3e5f5; /* Light purple for less effective */
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Cybersecurity Facts</h1>
+        <ul id="facts-list"></ul>
+        <button id="replace-facts-btn">Replace Facts</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "Cybercrime Costs",
+                "description": "Cybercrime is expected to cost the world $10.5 trillion annually by 2025, up from $3 trillion in 2015."
+            },
+            {
+                "fact": "Data Breaches",
+                "description": "The average time to identify a data breach in 2020 was 207 days."
+            },
+            {
+                "fact": "Phishing Attacks",
+                "description": "Phishing attacks account for more than 80% of reported security incidents."
+            },
+            {
+                "fact": "Ransomware",
+                "description": "Ransomware attacks occur every 11 seconds, and the average ransom payment has increased significantly over the years."
+            },
+            {
+                "fact": "IoT Vulnerabilities",
+                "description": "By 2025, it is estimated that there will be over 75 billion IoT devices, many of which are vulnerable to cyber attacks."
+            },
+            {
+                "fact": "Human Error",
+                "description": "Human error is a leading cause of data breaches, accounting for approximately 95% of cybersecurity incidents."
+            },
+            {
+                "fact": "Zero-Day Vulnerabilities",
+                "description": "Zero-day vulnerabilities are security flaws that are exploited by hackers before the vendor has released a fix."
+            }
+        ];
+
+        const newFacts = [
+            {
+                "fact": "Cloud Security",
+                "description": "As more businesses move to the cloud, securing cloud environments has become a top priority."
+            },
+            {
+                "fact": "Mobile Security",
+                "description": "With the increase in mobile device usage, mobile security threats are on the rise."
+            },
+            {
+                "fact": "Biometric Security",
+                "description": "Biometric security measures, such as fingerprint and facial recognition, are becoming more common."
+            },
+            {
+                "fact": "Blockchain Security",
+                "description": "Blockchain technology offers enhanced security features, but it is not immune to attacks."
+            },
+            {
+                "fact": "Cyber Espionage",
+                "description": "Cyber espionage involves the use of hacking techniques to gain access to confidential information."
+            }
+        ];
+
+        const factsList = document.getElementById('facts-list');
+        const replaceFactsBtn = document.getElementById('replace-facts-btn');
+
+        function displayFacts(factsArray) {
+            factsList.innerHTML = '';
+            factsArray.forEach(fact => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${fact.fact}:</strong> ${fact.description}`;
+                factsList.appendChild(listItem);
+            });
+        }
+
+        replaceFactsBtn.addEventListener('click', () => {
+            displayFacts(newFacts);
+        });
+
+        // Display initial facts
+        displayFacts(facts);
+    </script>
+</body>
+</html>
